@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About MMDAI — Real Estate Calculators Built by an Investor, Powered by AI</title>
+  <meta name="description" content="MMDAI (Me, Myself and AI) is a financial tools platform built by an independent investor and developer. Free property calculators for UK, US, Poland, Germany, France, Spain, Italy and Switzerland.">
+  <link rel="canonical" href="https://mmandai.github.io/about/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='40' fill='%23DC2626' font-weight='700'>MM</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"AboutPage","name":"About MMDAI","url":"https://mmandai.github.io/about/","description":"MMDAI (Me, Myself and AI) is a financial tools platform built by an independent investor and developer, offering free real estate calculators for UK, US, Poland, Germany, France, Spain, Italy and Switzerland.","publisher":{"@type":"Organization","name":"MMDAI","url":"https://mmandai.github.io"}}
+  </script>
+
+  <style>
+    :root {
+      --bg:    #F5F5F0;
+      --bg2:   #FFFFFF;
+      --bg3:   #EBEBEA;
+      --line:  rgba(0,0,0,0.09);
+      --text:  #111111;
+      --muted: rgba(17,17,17,0.52);
+      --dim:   rgba(17,17,17,0.32);
+      --red:   #DC2626;
+      --navy:  #0F172A;
+    }
+
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+    a{color:inherit;text-decoration:none;}
+
+    /* NAV */
+    nav{position:sticky;top:0;z-index:100;background:rgba(245,245,240,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);}
+    .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:16px 24px;}
+    .logo{font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:700;letter-spacing:-0.5px;color:var(--text);text-decoration:none;}
+    .nav-links{display:flex;gap:24px;align-items:center;}
+    .nav-links a{font-size:13px;color:var(--muted);transition:color .2s;}
+    .nav-links a:hover{color:var(--text);}
+    .nav-cta{font-size:13px;font-weight:600;background:var(--red);color:#fff !important;padding:9px 20px;border-radius:40px;transition:opacity .2s;}
+    .nav-cta:hover{opacity:.85;}
+    @media(max-width:600px){.nav-cta{display:none;}}
+
+    /* HERO */
+    .hero{max-width:900px;margin:0 auto;padding:80px 24px 64px;text-align:center;}
+    .hero-eyebrow{font-family:'DM Mono',monospace;font-size:11px;color:var(--red);letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;opacity:.8;}
+    .hero-eyebrow::before{content:'// ';}
+    .hero-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(52px,7vw,80px);font-weight:800;line-height:1.0;letter-spacing:-0.03em;color:var(--text);margin-bottom:10px;}
+    .hero-subtitle{font-family:'DM Mono',monospace;font-size:14px;color:var(--muted);letter-spacing:1px;margin-bottom:36px;}
+    .hero-lead{font-size:18px;color:var(--muted);max-width:620px;margin:0 auto 48px;line-height:1.7;}
+    .hero-pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
+    .hero-pill{font-family:'DM Mono',monospace;font-size:12px;color:var(--dim);padding:6px 14px;border:1px solid var(--line);border-radius:20px;letter-spacing:.5px;}
+
+    /* DIVIDER */
+    .divider{max-width:1100px;margin:0 auto;height:1px;background:var(--line);}
+
+    /* STATS */
+    .stats{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+    .stats-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);padding:48px 24px;}
+    .stat{text-align:center;padding:0 16px;}
+    .stat+.stat{border-left:1px solid var(--line);}
+    .stat-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:42px;font-weight:800;color:var(--text);line-height:1;margin-bottom:8px;letter-spacing:-0.02em;}
+    .stat-num span{color:var(--red);}
+    .stat-label{font-size:13px;color:var(--muted);line-height:1.4;}
+
+    /* STORY */
+    .story{max-width:720px;margin:0 auto;padding:72px 24px;text-align:center;}
+    .story-block{margin-bottom:56px;}
+    .story-block:last-child{margin-bottom:0;}
+    .block-label{font-family:'DM Mono',monospace;font-size:10px;color:var(--red);letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;}
+    .story-block h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:26px;font-weight:700;line-height:1.2;margin-bottom:16px;letter-spacing:-0.01em;}
+    .story-block p{font-size:16px;color:var(--muted);line-height:1.8;margin-bottom:14px;}
+    .story-block p:last-child{margin-bottom:0;}
+    .story-block p strong{color:var(--text);font-weight:600;}
+
+    /* AI SECTION */
+    .ai-section{background:var(--navy);color:#fff;padding:80px 24px;text-align:center;}
+    .ai-inner{max-width:720px;margin:0 auto;}
+    .ai-tag{font-family:'DM Mono',monospace;font-size:10px;color:rgba(220,38,38,.9);letter-spacing:3px;text-transform:uppercase;margin-bottom:24px;}
+    .ai-tag::before{content:'// ';}
+    .ai-section h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(28px,4vw,44px);font-weight:800;line-height:1.15;margin-bottom:24px;letter-spacing:-0.02em;}
+    .ai-section h2 em{font-style:normal;color:var(--red);}
+    .ai-section p{font-size:16px;color:rgba(255,255,255,0.65);line-height:1.8;margin-bottom:16px;}
+    .ai-section p:last-of-type{margin-bottom:0;}
+    .ai-section p strong{color:rgba(255,255,255,0.9);font-weight:600;}
+    .ai-link{color:var(--red);text-decoration:underline;text-underline-offset:3px;transition:opacity .2s;}
+    .ai-link:hover{opacity:.75;}
+
+    /* MARKETS */
+    .markets{max-width:1100px;margin:0 auto;padding:72px 24px;}
+    .section-tag{font-family:'DM Mono',monospace;font-size:10px;color:var(--red);letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;text-align:center;}
+    .section-tag::before{content:'// ';}
+    .markets h2,.principles h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:32px;font-weight:700;text-align:center;margin-bottom:40px;letter-spacing:-0.01em;}
+    .markets-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+    .market-card{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:24px;text-align:center;transition:border-color .2s,transform .2s;display:flex;flex-direction:column;cursor:pointer;}
+    .market-card:hover{border-color:rgba(220,38,38,.25);transform:translateY(-2px);}
+    .market-flag{font-size:28px;margin-bottom:12px;}
+    .market-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;margin-bottom:6px;}
+    .market-desc{font-size:12px;color:var(--muted);line-height:1.5;flex:1;}
+    .market-count{font-family:'DM Mono',monospace;font-size:11px;color:var(--red);margin-top:12px;letter-spacing:.5px;border-top:1px solid var(--line);padding-top:12px;}
+
+    /* PRINCIPLES */
+    .principles{max-width:1100px;margin:0 auto;padding:72px 24px;}
+    .principles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+    .principle{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:28px 24px;text-align:center;}
+    .principle-num{font-family:'DM Mono',monospace;font-size:10px;color:var(--red);letter-spacing:3px;text-transform:uppercase;margin-bottom:14px;}
+    .principle h3{font-family:'Plus Jakarta Sans',sans-serif;font-size:17px;font-weight:700;margin-bottom:10px;}
+    .principle p{font-size:14px;color:var(--muted);line-height:1.6;}
+
+    /* CTA */
+    .cta-section{background:var(--bg3);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:72px 24px;text-align:center;}
+    .cta-section h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:32px;font-weight:700;margin-bottom:16px;letter-spacing:-0.01em;}
+    .cta-section p{font-size:16px;color:var(--muted);margin-bottom:36px;max-width:480px;margin-left:auto;margin-right:auto;}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;padding:14px 32px;border-radius:40px;font-weight:600;font-size:15px;transition:opacity .2s,transform .2s;}
+    .btn-primary:hover{opacity:.88;transform:translateY(-1px);}
+    .btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;border:1px solid var(--line);color:var(--text);padding:14px 32px;border-radius:40px;font-weight:500;font-size:15px;margin-left:12px;transition:border-color .2s;}
+    .btn-outline:hover{border-color:rgba(220,38,38,.3);}
+
+    /* FOOTER */
+    footer{background:var(--navy);color:rgba(255,255,255,0.5);padding:48px 24px;}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:24px;text-align:center;}
+    .footer-logo{font-family:'DM Mono',monospace;font-size:17px;font-weight:500;color:#fff;letter-spacing:-0.5px;}
+    .footer-links{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;}
+    .footer-links a{font-size:13px;color:rgba(255,255,255,0.45);transition:color .2s;}
+    .footer-links a:hover{color:rgba(255,255,255,0.8);}
+    .footer-divider{width:100%;height:1px;background:rgba(255,255,255,0.08);}
+    .footer-copy{font-size:12px;color:rgba(255,255,255,0.3);line-height:1.7;}
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      .markets-grid{grid-template-columns:repeat(2,1fr);}
+      .principles-grid{grid-template-columns:1fr 1fr;}
+    }
+    @media(max-width:768px){
+      .stats-inner{grid-template-columns:repeat(2,1fr);gap:0;}
+      .stat{padding:24px 12px;}
+      .stat:nth-child(3){border-left:none;border-top:1px solid var(--line);}
+      .stat:nth-child(4){border-top:1px solid var(--line);}
+      .btn-outline{margin-left:0;margin-top:12px;}
+    }
+    @media(max-width:480px){
+      .markets-grid{grid-template-columns:1fr;}
+      .principles-grid{grid-template-columns:1fr;}
+    }
+      /* Cookie banner */
+    .cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#0F172A!important;padding:16px 24px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;font-size:13px;}
+    .cookie-banner p{max-width:560px;text-align:center;color:rgba(255,255,255,.7)!important;font-size:13px!important;line-height:1.5!important;margin:0!important;}
+    .cookie-banner a{color:#fff!important;text-decoration:underline!important;}
+    .cookie-btn{padding:8px 20px;border-radius:40px!important;font-size:13px!important;font-weight:700!important;cursor:pointer;border:none!important;font-family:'Manrope',system-ui,sans-serif!important;line-height:1!important;}
+    .cookie-accept{background:#DC2626!important;color:#fff!important;}
+    .cookie-reject{background:transparent!important;color:rgba(255,255,255,.7)!important;border:1px solid rgba(255,255,255,.3)!important;}
+    .cookie-buttons{display:flex;gap:8px;}
+    @media(max-width:600px){.cookie-banner{flex-direction:column;text-align:center;}}
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="https://mmandai.github.io" class="logo">MMDAI</a>
+    <div class="nav-links">
+      <a href="https://mmandai.github.io">All Calculators</a>
+      <a href="mailto:imemyselfandai@gmail.com">Contact</a>
+      <a href="https://imemyselfai.gumroad.com" class="nav-cta">Download Excel →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">About</div>
+  <div class="hero-name">MMDAI</div>
+  <div class="hero-subtitle">(Me, Myself and AI)</div>
+  <p class="hero-lead">Started as a personal toolkit — calculators built out of frustration with tools that were too shallow, too generic, or locked behind paywalls. It grew into something bigger.</p>
+  <div class="hero-pills">
+    <span class="hero-pill">Built by an investor</span>
+    <span class="hero-pill">Powered by AI</span>
+    <span class="hero-pill">Free for everyone</span>
+    <span class="hero-pill">8 markets · 5 languages</span>
+    <span class="hero-pill">No signup · No paywall</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat">
+      <div class="stat-num">24<span>+</span></div>
+      <div class="stat-label">Free calculators<br>across 8 markets</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">8</div>
+      <div class="stat-label">Countries covered<br>UK · US · PL · DE · FR · ES · IT · CH</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">5</div>
+      <div class="stat-label">Languages<br>EN · ES · PL · DE · FR</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num"><span>€</span>0</div>
+      <div class="stat-label">Cost to use<br>No signup. No paywall.</div>
+    </div>
+  </div>
+</div>
+
+<!-- STORY -->
+<section class="story">
+  <div class="story-block">
+    <div class="block-label">The problem</div>
+    <h2>Most property calculators are broken by design.</h2>
+    <p>They ignore local tax law. They use round numbers that don't reflect reality. They stop at gross yield without telling you what actually lands in your pocket. And the good ones — the ones built by accountants or mortgage brokers — are buried behind consultations or subscription fees.</p>
+    <p>MMDAI was built to fix that. <strong>Real formulas. Real tax logic. Real local context.</strong> Free, in the browser, without asking for your email address.</p>
+  </div>
+
+  <div class="story-block">
+    <div class="block-label">The origin</div>
+    <h2>Calculators built for personal use first.</h2>
+    <p>The person behind MMDAI has spent over 15 years working across project management, operations, and investment — building systems, running businesses, and making the kind of financial decisions that require tools that actually work.</p>
+    <p>When evaluating property investments across different European markets, the available tools kept falling short. <strong>SDLT with the BTL surcharge. Section 24 vs limited company. Grunderwerbsteuer across 16 Bundesländer. LMNP réel vs micro-BIC.</strong> No single tool handled any of these correctly — let alone all of them.</p>
+    <p>So they were built from scratch. Then made public. Then expanded to cover more markets, more edge cases, more of the real complexity that investors actually face.</p>
+  </div>
+
+  <div class="story-block">
+    <div class="block-label">The commitment</div>
+    <h2>Maintained, updated, and honest about limitations.</h2>
+    <p>Tax law changes. SDLT thresholds shift. Bundesland rates get updated. LF 2025 rewrote the LMNP exit calculation overnight. Every calculator on this site is reviewed and updated when the underlying rules change — not left to go stale.</p>
+    <p>Every calculator includes a disclaimer because <strong>these are tools for informed decision-making, not substitutes for professional advice.</strong> The goal is to help you arrive at the conversation with your accountant or broker already knowing the right questions to ask.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- AI SECTION -->
+<section class="ai-section">
+  <div class="ai-inner">
+    <div class="ai-tag">Built with AI</div>
+    <h2>A love letter to<br><em>the AI revolution.</em></h2>
+    <p><a href="mailto:imemyselfandai@gmail.com" class="ai-link">MMDAI</a> <a href="mailto:imemyselfandai@gmail.com" class="ai-link">(Me, Myself and AI)</a> would not exist in its current form without modern AI tools. The ability to build a 24-calculator ecosystem spanning 8 countries and 5 languages — with genuine local tax depth — in a fraction of the time it would have taken before, is extraordinary.</p>
+    <p>This is not a site where AI wrote generic content and called it done. <strong>AI is a collaborator here</strong> — used to verify tax logic, cross-reference legislation, translate financial concepts across languages, and accelerate the kind of research that used to take weeks. The depth you see in these calculators is the result of that collaboration.</p>
+    <p>We genuinely love what AI makes possible. Not because it replaces thinking — but because it <strong>amplifies it</strong>. MMDAI is a product of that belief, built at the intersection of human expertise and machine capability. The future of financial tools looks like this: precise, accessible, and available to everyone.</p>
+  </div>
+</section>
+
+<!-- MARKETS -->
+<section class="markets">
+  <div class="section-tag">Coverage</div>
+  <h2>Seven markets. Real local depth.</h2>
+  <div class="markets-grid">
+    <a href="https://mmandai.github.io/pakiet-inwestora/" class="market-card">
+      <div class="market-flag">🇵🇱</div>
+      <div class="market-name">Polska</div>
+      <div class="market-desc">Rentowność najmu z ryczałtem 8.5%, zysk z flipu, porównywarka nieruchomości, estymator remontu.</div>
+      <div class="market-count">2 kalkulatory + 3 w 1</div>
+    </a>
+    <a href="https://mmandai.github.io/#uk" class="market-card">
+      <div class="market-flag">🇬🇧</div>
+      <div class="market-name">United Kingdom</div>
+      <div class="market-desc">SDLT with BTL surcharge, Section 24, ICR stress tests, HMO licensing, flip CGT vs Income Tax.</div>
+      <div class="market-count">6 calculators</div>
+    </a>
+    <a href="https://mmandai.github.io/#us" class="market-card">
+      <div class="market-flag">🇺🇸</div>
+      <div class="market-name">United States</div>
+      <div class="market-desc">DTI ratios, FHA/VA/Conventional, MACRS depreciation, Schedule E, closing costs by state. Also in Spanish.</div>
+      <div class="market-count">6 calculators · EN + ES</div>
+    </a>
+    <a href="https://mmandai.github.io/#de" class="market-card">
+      <div class="market-flag">🇩🇪</div>
+      <div class="market-name">Deutschland</div>
+      <div class="market-desc">Grunderwerbsteuer across all 16 Bundesländer, AfA linear and degressiv, §7b Sonder-AfA, Nettomietrendite.</div>
+      <div class="market-count">3 Rechner</div>
+    </a>
+    <a href="https://mmandai.github.io/#fr" class="market-card">
+      <div class="market-flag">🇫🇷</div>
+      <div class="market-name">France</div>
+      <div class="market-desc">6 régimes fiscaux, LMNP réel vs micro-BIC, LF 2025 amortissement réintégration, plus-value abattements.</div>
+      <div class="market-count">2 calculatrices</div>
+    </a>
+    <a href="https://mmandai.github.io/#ch" class="market-card">
+      <div class="market-flag">🇨🇭</div>
+      <div class="market-name">Schweiz / Suisse</div>
+      <div class="market-desc">Direkte vs. indirekte Amortisation, Säule 3a, Eigenmietwert-Abschaffung 2028. In German and French.</div>
+      <div class="market-count">2 calculateurs · DE + FR</div>
+    </a>
+    <a href="https://mmandai.github.io/#es" class="market-card">
+      <div class="market-flag">🇪🇸</div>
+      <div class="market-name">España</div>
+      <div class="market-desc">ITP and AJD across all 19 Comunidades Autónomas, IVA for new builds, Ley Hipotecaria 2019.</div>
+      <div class="market-count">1 calculadora</div>
+    </a>
+    <a href="https://mmandai.github.io/#it" class="market-card">
+      <div class="market-flag">🇮🇹</div>
+      <div class="market-name">Italia</div>
+      <div class="market-desc">Cedolare secca vs IRPEF for canone libero (21%), concordato (10%) and affitti brevi (26%).</div>
+      <div class="market-count">1 calcolatore</div>
+    </a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PRINCIPLES -->
+<section class="principles">
+  <div class="section-tag">Principles</div>
+  <h2>How every calculator is built.</h2>
+  <div class="principles-grid">
+    <div class="principle">
+      <div class="principle-num">01 — Accuracy first</div>
+      <h3>Real tax law, not approximations.</h3>
+      <p>Every calculator uses the actual legislative source — HMRC, GNotKG, HUD, Code Général des Impôts. Rates are verified against official sources and updated when legislation changes.</p>
+    </div>
+    <div class="principle">
+      <div class="principle-num">02 — Local depth</div>
+      <h3>Localization is not translation.</h3>
+      <p>A UK BTL calculator needs Section 24 and ICR stress tests. A German one needs AfA by Baujahr and Bestellerprinzip. A French one needs 6 régimes fiscaux. Surface-level localization is not enough.</p>
+    </div>
+    <div class="principle">
+      <div class="principle-num">03 — No paywalls</div>
+      <h3>Free to use. Always.</h3>
+      <p>The web calculators are free, without signup or email capture. Excel versions with deeper analysis are available for those who want offline, editable models. The core tool is never locked.</p>
+    </div>
+    <div class="principle">
+      <div class="principle-num">04 — Honest limits</div>
+      <h3>Tools, not advice.</h3>
+      <p>Every calculator includes a clear disclaimer. These tools help you understand the numbers — they don't replace an accountant, mortgage broker, or solicitor. The goal is to help you ask better questions.</p>
+    </div>
+    <div class="principle">
+      <div class="principle-num">05 — Maintained</div>
+      <h3>Updated when the law changes.</h3>
+      <p>Tax law is not static. SDLT changed in April 2025. LF 2025 rewrote LMNP exit taxation. Sachsen raised Grunderwerbsteuer in 2023. Every page is reviewed against current legislation.</p>
+    </div>
+    <div class="principle">
+      <div class="principle-num">06 — No ads on decisions</div>
+      <h3>Referrals are labelled. Always.</h3>
+      <p>Some calculators include affiliate links to mortgage comparison tools. These are clearly labelled. MMDAI does not receive payment to skew calculation results or recommendations.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Start calculating.</h2>
+  <p>24 free calculators across 8 countries. No signup. No paywall. Open any tool and get your numbers in under a minute.</p>
+  <div>
+    <a href="https://mmandai.github.io" class="btn-primary">View all calculators →</a>
+    <a href="https://imemyselfai.gumroad.com" class="btn-outline">Download Excel versions</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">MMDAI</div>
+    <div class="footer-links">
+      <a href="https://mmandai.github.io/pakiet-inwestora/">🇵🇱 Rentowność Najmu</a>
+      <a href="https://mmandai.github.io/uk-rental-yield/">🇬🇧 BTL Yield Calculator</a>
+      <a href="https://mmandai.github.io/us-mortgage-affordability/">🇺🇸 Mortgage Affordability</a>
+      <a href="https://mmandai.github.io/us-hipoteca/">🇺🇸 Calculadora de Hipoteca</a>
+      <a href="https://mmandai.github.io/de-grunderwerbsteuer/">🇩🇪 Grunderwerbsteuer</a>
+      <a href="https://mmandai.github.io/fr-rendement-locatif/">🇫🇷 Rendement Locatif</a>
+      <a href="https://mmandai.github.io/ch-fr-amortissement-direct-vs-indirect/">🇨🇭 Amortissement</a>
+      <a href="https://mmandai.github.io/ch-de-direkte-vs-indirekte-rechner/">🇨🇭 Amortisation</a>
+      <a href="https://mmandai.github.io/es-itp/">🇪🇸 Calculadora ITP</a>
+      <a href="https://mmandai.github.io/it-cedolare-secca-vs-irpef/">🇮🇹 Cedolare Secca</a>
+    </div>
+    <div class="footer-divider"></div>
+    <p class="footer-copy">Free real estate calculators for informational purposes only. Not financial, tax or legal advice.<br>Always consult a qualified professional before making property decisions. © MMDAI 2026.</p>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookieBanner" style="display:none;">
+  <p>We use cookies from Google Analytics and Google AdSense. See our <a href="https://mmandai.github.io/privacy/">Privacy Policy</a>.</p>
+  <div class="cookie-buttons">
+    <button class="cookie-btn cookie-accept" onclick="setCookieConsent('accepted')">Accept</button>
+    <button class="cookie-btn cookie-reject" onclick="setCookieConsent('rejected')">Reject</button>
+  </div>
+</div>
+
+<script>
+function loadAnalytics(){
+  var g=document.createElement('script');g.async=true;
+  g.src='https://www.googletagmanager.com/gtag/js?id=G-PTMK2E1ZQ4';
+  document.head.appendChild(g);
+  window.dataLayer=window.dataLayer||[];
+  function gtag(){dataLayer.push(arguments);}window.gtag=gtag;
+  gtag('js',new Date());gtag('config','G-PTMK2E1ZQ4');
+  var s=document.createElement('script');s.async=true;
+  s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4019637448990375';
+  s.crossOrigin='anonymous';document.head.appendChild(s);
+}
+if(localStorage.getItem('cookieConsent')==='accepted'){loadAnalytics();}
+function setCookieConsent(v){localStorage.setItem('cookieConsent',v);document.getElementById('cookieBanner').style.display='none';if(v==='accepted')loadAnalytics();}
+if(!localStorage.getItem('cookieConsent')){document.getElementById('cookieBanner').style.display='flex';}
+</script>
+
+</body>
+</html>
